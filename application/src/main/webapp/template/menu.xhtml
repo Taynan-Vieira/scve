@@ -1,0 +1,87 @@
+<ui:composition
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:p="http://primefaces.org/ui"
+        xmlns:pu="http://primefaces.org/ultima">
+
+    <h:form id="menuform">
+        <div class="layout-menu #{guestPreferences.menuClass}">
+            <div class="nano">
+                <div class="nano-content menu-scroll-content">
+                    <ui:fragment
+                            rendered="#{guestPreferences.profileMode == 'inline' and guestPreferences.menuLayout != 'menu-layout-static menu-layout-horizontal'}">
+                        <div class="profile">
+                            <div class="profile-image"></div>
+                            <a id="profile-options" href="#">
+                                <span class="profile-name">#{profileMenuBean.nomeUsuario}</span>
+                                <i class="material-icons">&#xE313;</i>
+                            </a>
+                        </div>
+                        <ul id="profile-menu" class="ultima-menu">
+                            <li role="menuitem">
+                                <a href="#" class="ripplelink">
+                                    <i class="material-icons">domain</i>
+                                    <span>#{profileMenuBean.lotacaoUsuario}</span>
+                                </a>
+                            </li>
+                            <li role="menuitem">
+                                <a href="/scve/logout" class="ripplelink">
+                                    <i class="material-icons">power_settings_new</i>
+                                    <span>Sair</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </ui:fragment>
+
+                    <pu:menu widgetVar="me">
+                        <p:menuitem id="um_dashboard" value="Início" icon="home"
+                                    rendered="#{p:ifAnyGranted('SI_GESTOR')}"
+                                    action="#{sessionBean.navigateToDashboard}" ajax="false"/>
+
+                        <p:submenu id="material" label="Cadastros básicos" icon="add">
+                            <p:menuitem id="b_material" value="Busca de materiais" icon="search"
+                                        action="#{sessionBean.navigateToBuscaMaterial}"
+                                        rendered="#{p:ifAnyGranted('SI_GESTOR')}"
+                                        ajax="false"/>
+
+                            <p:menuitem id="c_material" value="Cadastro de materiais" icon="add_box"
+                                        action="#{sessionBean.navigateToCadastroMaterial}"
+                                        rendered="#{p:ifAnyGranted('SI_GESTOR')}"
+                                        ajax="false"/>
+                        </p:submenu>
+
+                        <p:submenu id="estoque" label="Estoque" icon="dns">
+                            <p:menuitem id="c_entrada_material" value="Entrada de materiais" icon="add_box"
+                                        action="#{sessionBean.navigateToEntradaMaterial}"
+                                        rendered="#{p:ifAnyGranted('SI_GESTOR')}"
+                                        ajax="false"/>
+                            <p:menuitem id="c_estoque_material" value="Estoque de materiais" icon="add_box"
+                                        action="#{sessionBean.navigateToEstoqueMaterial}"
+                                        rendered="#{p:ifAnyGranted('SI_GESTOR')}"
+                                        ajax="false"/>
+                        </p:submenu>
+                        <p:submenu id="solicitacao" label="Solicitações" icon="announcement">
+                            <p:menuitem id="cadastro_solicitacao" value="Realizar solicitação" icon="add_box"
+                                        action="#{sessionBean.navigateToCadastroSolicitacao}"
+                                        rendered="#{p:ifAnyGranted('SI_GESTOR')}"
+                                        ajax="false"/>
+                            <p:menuitem id="acompanhaSolicitacao" value="Acompanhar solicitação" icon="assessment"
+                                        action="#{sessionBean.navigateToAcompanhaSolicitacao}"
+                                        rendered="#{p:ifAnyGranted('SI_GESTOR')}"
+                                        ajax="false"/>
+                            <p:menuitem id="cadastro_devolucao" value="Realizar devolução" icon="archive"
+                                        action="#{sessionBean.navigateToCadastroDevolucao}"
+                                        rendered="#{p:ifAnyGranted('SI_GESTOR')}"
+                                        ajax="false"/>
+                            <p:menuitem id="acompanha_devolucao" value="Acompanhar devolução" icon="assessment"
+                                        rendered="#{p:ifAnyGranted('SI_GESTOR')}"
+                                        action="#{sessionBean.navigateToAcompanhaDevolucao}"
+                                        ajax="false"/>
+                        </p:submenu>
+                    </pu:menu>
+                </div>
+            </div>
+        </div>
+    </h:form>
+</ui:composition>

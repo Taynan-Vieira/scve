@@ -1,0 +1,30 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="/template/template.xhtml">
+
+    <ui:define name="title">Dashboard</ui:define>
+
+    <ui:define name="head">
+
+    </ui:define>
+
+    <ui:define name="content">
+        <div class="ui-g dashboard">
+            <p:repeat value="#{dashboardBean.materiais}" var="material">
+                <div class="ui-g-4">
+                    <div class="card overview">
+                        <div class="overview-content clearfix">
+                            <span class="overview-title">#{material.modelo}</span>
+                            <span class="overview-detail">Estoque: #{material.quantidadeDisponivel}/#{material.quantidadeTotal}</span>
+                        </div>
+                        <div class="overview-footer"></div>
+                    </div>
+                </div>
+            </p:repeat>
+        </div>
+    </ui:define>
+
+</ui:composition>

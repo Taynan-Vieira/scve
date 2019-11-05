@@ -1,0 +1,121 @@
+.gms-background-gradient {
+    background: #4b6cb7;
+    background: -webkit-linear-gradient(to top, #4b6cb7, #182848);
+    background: linear-gradient(to top, #4b6cb7, #182848);
+}
+
+.ui-inputfield {
+    width: 100%;
+}
+
+.ui-autocomplete {
+    width: 100%;
+}
+
+.ui-selectonemenu {
+    width: 100%;
+}
+
+.scroll-panel-entrada-patrimonio {
+    width: 800px;
+    height: 500px;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.vertical-align-center {
+    vertical-align: middle;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.m-10 {
+    margin: 10px;
+}
+
+.mr-10 {
+    margin-right: 10px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.ui-datatable-even.ui-state-highlight {
+    background-color: #3F51B5 !important;
+}
+
+.ui-datatable-odd.ui-state-highlight {
+    background-color: #3F51B5 !important;
+}
+
+.fileupload-toolbar .ui-fileupload-buttonbar.ui-widget-header.ui-corner-top {
+    background-color: transparent;
+    border-color: transparent;
+    padding-left: 0;
+}
+
+.fileupload-toolbar .ui-fileupload-content.ui-widget-content.ui-corner-bottom {
+    border: none;
+}
+
+.no-border {
+    border: none;
+}
+
+.transparent-panelgrid {
+    border: 0px none;
+    background-color: transparent;
+}
+
+.logo {
+    width: 130px;
+    height: 136px;
+}
+
+.alert-error-login {
+    color: red;;
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+.reset-data-list {
+    border: none;
+    padding: 0px;
+    border-bottom: none;
+}
+
+.alinhar-texto {
+    text-align: right;
+}
+
+.bloco-tempo {
+    position: relative;
+    font-size: 14px;
+}
+
+.icone-tempo {
+    background-color: #ffffff;
+    position: absolute;
+    top: 0px;
+    right: -13px;
+}
+
+.bloco-descricao-tempo {
+    padding-left: 1.5em;
+    border-left: 1px solid #bdbdbd;
+}
+
+.logo-gms-topbar{
+    height: 50px;
+    display: inline-block;
+    vertical-align: middle;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}

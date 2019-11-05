@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:util="http://xmlns.jcp.org/jsf/composite/components/util"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <f:facet name="first">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+    </f:facet>
+
+    <title>PrimeFaces Ultima</title>
+
+    <h:outputScript name="js/ripple.js" library="ultima-layout"/>
+    <h:outputScript name="js/layout.js" library="ultima-layout"/>
+
+</h:head>
+
+<h:body styleClass="gms-background-gradient">
+
+    <f:metadata>
+        <f:viewParam name="dummy"/>
+        <f:event listener="#{loginBean.preRender}" type="preRenderView"/>
+    </f:metadata>
+    <h:form id="form" prependId="false">
+
+        <!-- MESSAGES -->
+        <p:growl id="messages" showDetail="false"/>
+        <!-- MESSAGES -->
+
+        <div class="card login-panel ui-fluid">
+            <div class="ui-g">
+                <div class="ui-g-12">
+                    <p:graphicImage name="images/logo-gms.svg"
+                                    styleClass="logo"
+                                    library="ultima-layout"/>
+                </div>
+                <div class="ui-g-12">
+                    <p:outputLabel value="Usuário ou senha inválidos!" styleClass="alert-error-login"
+                                   rendered="${!empty param['error']}"/>
+                </div>
+
+                <div class="ui-g-12">
+                    <h:panelGroup styleClass="md-inputfield">
+                        <p:inputMask id="cpf" mask="999.999.999-99"/>
+                        <label>Username</label>
+                    </h:panelGroup>
+                </div>
+                <div class="ui-g-12">
+                    <h:panelGroup styleClass="md-inputfield">
+                        <p:password id="senha" converter="passwordConverter"/>
+                        <label>Password</label>
+                    </h:panelGroup>
+                </div>
+                <div class="ui-g-12">
+                    <p:commandButton id="btLogin" value="Login" ajax="false" action="#{loginBean.login}"
+                                     icon="ui-icon-person" update="messages"/>
+                </div>
+                <!--                <div class="ui-g-12" style="margin-top:-80px">-->
+                <!--                    <a id="lkbRegistro" href="#"><h5>Não tem senha? Cadastre-se.</h5></a>-->
+                <!--                    <a id="lkbRecuperar" href="#"><h5>Recuperar senha.</h5></a>-->
+                <!--                </div>-->
+            </div>
+
+        </div>
+    </h:form>
+    <h:outputStylesheet name="css/ripple.css" library="ultima-layout"/>
+    <h:outputStylesheet name="css/layout-#{guestPreferences.theme}.css" library="ultima-layout"/>
+    <h:outputStylesheet name="css/custom.css" library="ultima-layout"/>
+</h:body>
+
+</html>
