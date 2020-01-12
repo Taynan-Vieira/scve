@@ -38,7 +38,7 @@
             <version>6.2</version>
         </dependency>
         <dependency>
-            <groupId>org.primefaces.themes</groupId>
+            <groupId>org.primefaces.ultima</groupId>
             <artifactId>ultima</artifactId>
             <version>1.0</version>
         </dependency>

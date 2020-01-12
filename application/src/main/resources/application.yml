@@ -5,10 +5,6 @@ spring:
     default-domain: scve
 
   datasource:
-    #    url: jdbc:postgresql://172.16.2.176:5432/SEAP
-    #    username: postgres
-    #    password: '$1!8@6141D@#9&L30F'
-
     url: jdbc:postgresql://localhost:5432/SCVE
     username: postgres
     password: 'root'
